@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <style>
+      h1 {
+        color: brown;
+      }
+      @media print {
+        h1 {
+          color: palevioletred;
+        }
+      }
+      @media print and (orientation: landscape) {
+        h1 {
+          color: aquamarine;
+        }
+      }
+      .box {
+        height: 60px;
+        width: 100%;
+        background-color: skyblue;
+      }
+      /*after and space should be givem*/
+
+      @media screen and (max-width: 900px) {
+        .box {
+          background-color: yellow;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .box {
+          background-color: green;
+        }
+      }
+      .box1 {
+        height: 70px;
+        margin-top: 20px;
+        width: 100%;
+        background-color: brown;
+      }
+      @media screen and (min-width: 600px) {
+        .box1 {
+          background-color: yellow;
+        }
+      }
+      @media screen and (min-width: 900px) {
+        .box1 {
+          background-color: pink;
+        }
+      }
+      .main {
+        height: 70px;
+        width: 100%;
+        margin-top: 20px;
+      }
+      .t {
+        display: none;
+      }
+      .l {
+        display: none;
+      }
+      .m {
+        display: none;
+      }
+      @media screen and (max-width: 1200px) {
+        .main {
+          background-color: aliceblue;
+        }
+        .l {
+          display: block;
+        }
+        .t {
+          display: none;
+        }
+        .m {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .main {
+          background-color: saddlebrown;
+        }
+        .l {
+          display: none;
+        }
+        .t {
+          display: block;
+        }
+        .m {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .main {
+          background-color: lawngreen;
+        }
+        .l {
+          display: none;
+        }
+        .t {
+          display: none;
+        }
+        .m {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mudassir Khan Tailor</h1>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="main">
+      <h1 class="l">Laptop</h1>
+      <h1 class="t">Tablet</h1>
+      <h1 class="m">Mobile</h1>
+    </div>
+  </body>
+</html>
