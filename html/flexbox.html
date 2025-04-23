@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+  </head>
+  <style>
+    .box {
+      display: flex;
+      flex-direction: column;
+    }
+    .para1,
+    .para2,
+    .para3 {
+      padding: 10px;
+      color: white;
+      flex: 1;
+    }
+    .para1 {
+      background-color: pink;
+      order: 3;
+    }
+    .para2 {
+      background-color: aquamarine;
+      order: 1;
+    }
+    .para3 {
+      background-color: skyblue;
+      order: 2;
+    }
+    .container {
+      min-height: 700px;
+      background-color: bisque;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .boxes {
+      background-color: greenyellow;
+      border: 1px solid white;
+      height: 150px;
+      width: 150px;
+    }
+    .b1,
+    .b2,
+    .b3,
+    .b4 {
+      color: white;
+      text-align: center;
+      padding-top: 35px;
+      font-size: larger;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="boxes b1">1</div>
+      <div class="boxes b2">2</div>
+      <div class="boxes b3">3</div>
+      <div class="boxes b4">4</div>
+    </div>
+    <div class="box">
+      <div class="para1">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos corporis, eveniet voluptatem omnis neque a! Perferendis explicabo consequatur eius minima labore assumenda laudantium. Rerum, dolorum. Officia debitis quos vitae doloribus aut unde natus adipisci, inventore dolorum commodi possimus reprehenderit quas nam! Officiis a nihil ratione nulla magnam dolor iure magni quidem commodi laborum expedita earum, illo minima soluta modi recusandae voluptatem, nisi nobis cupiditate. Dolorem
+          quasi quod corrupti nobis sapiente ex nulla porro cupiditate, repellendus obcaecati quibusdam voluptatibus! Quae omnis atque maiores laudantium nihil! Odit molestias fuga minus at. Inventore voluptate hic officiis soluta temporibus, distinctio voluptas natus vero repudiandae.
+        </p>
+      </div>
+      <div class="para2">
+        <p>
+          At doloremque eligendi, dolor ducimus distinctio quae ut sit facere corrupti nisi aspernatur? Nulla, voluptatem. At aliquam blanditiis atque laboriosam voluptas velit quasi sapiente laborum, recusandae suscipit. Nobis porro est velit rem voluptatem aliquam corrupti rerum? Necessitatibus obcaecati consectetur dolor harum eum nemo sit perferendis, vel sequi possimus quia mollitia quidem pariatur animi, odio vitae. Pariatur ut ullam, praesentium aliquam dignissimos unde beatae! Eligendi
+          totam delectus quis eaque natus rerum eos, tempora, incidunt blanditiis, laborum laudantium inventore aperiam? Consequatur voluptate consequuntur placeat rerum at quidem, ab repudiandae minima earum eum mollitia facilis beatae quo enim, iusto quas atque dolorum officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi fuga, praesentium eaque reiciendis adipisci eveniet voluptatibus quis assumenda consequuntur. Nesciunt natus ipsam quae nisi, vitae adipisci, fugiat
+          maxime sequi quia blanditiis suscipit id temporibus hic totam vero vel corporis veniam cum impedit consectetur autem culpa ex itaque! Rerum, natus nesciunt.
+        </p>
+      </div>
+      <div class="para3">
+        <p>
+          Perferendis minima unde quam sit rerum cum architecto adipisci, laboriosam asperiores dignissimos assumenda ab dolorum rem explicabo repudiandae ullam voluptatum laborum? Tenetur, nemo incidunt. Sapiente iusto suscipit at ipsam, enim iste repellat distinctio ea. Quasi illo voluptas officiis nisi deleniti sunt, asperiores a dolores similique esse unde magni atque totam harum? Eligendi consectetur aut maiores nam, necessitatibus ipsa, molestias natus provident esse totam quos, est quas
+          assumenda minima quasi cupiditate. Illum, quod molestias minima fugit architecto exercitationem illo explicabo veniam? Eum, nisi iste placeat ex minus cumque repellendus vitae, minima sint eos dolore molestiae inventore sit ut odit esse veniam.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
