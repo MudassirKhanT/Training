@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>leaderboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+      }
+      .container {
+        height: 500px;
+        width: 500px;
+        border: 2px solid gray;
+        border-radius: 5px;
+      }
+      .heading {
+        width: 95%;
+        height: 5%;
+        font-weight: 300;
+        margin: 10px;
+      }
+      .section {
+        width: 500px;
+        height: 95%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .s1 {
+        width: 30%;
+        height: 70%;
+        position: relative;
+      }
+      .s2 {
+        width: 30%;
+        height: 70%;
+      }
+      .s3 {
+        width: 30%;
+        height: 70%;
+      }
+      .footer {
+        width: 500px;
+        height: 24.3%;
+        border: 2px solid gray;
+        border-radius: 3px;
+        position: relative;
+        bottom: 140px;
+      }
+      .view {
+        position: absolute;
+      }
+      .m1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        .details {
+          text-align: center;
+        }
+      }
+      .box1 {
+        height: 100px;
+        width: 130px;
+        background-color: skyblue;
+        color: white;
+        font-weight: 600;
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
+        position: absolute;
+        top: 232px;
+        h1 {
+          margin-top: 45px;
+          text-align: center;
+        }
+      }
+      .m2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .content2 {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        .detail2 {
+          text-align: center;
+        }
+      }
+      .box2 {
+        height: 135px;
+        width: 130px;
+        background-color: rgb(236, 188, 16);
+        color: white;
+        font-weight: 600;
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
+        position: absolute;
+        top: 254px;
+        h1 {
+          margin-top: 45px;
+          text-align: center;
+        }
+      }
+      .m3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .content3 {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+        .detail3 {
+          text-align: center;
+        }
+      }
+      .box3 {
+        height: 70px;
+        width: 130px;
+        background-color: rgb(245, 152, 12);
+        color: white;
+        font-weight: 600;
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
+        position: absolute;
+        top: 318px;
+        h1 {
+          margin-top: 45px;
+          text-align: center;
+          position: relative;
+          bottom: 20px;
+        }
+      }
+      .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+      }
+      .view {
+        button {
+          width: 450px;
+          height: 50px;
+          background-color: white;
+          font-size: large;
+          border-radius: 50px;
+        }
+        button:hover {
+          background-color: rgb(230, 221, 221);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="heading">
+          <h2>Leaderboard</h2>
+        </div>
+        <div class="section">
+          <div class="s1">
+            <div class="m1">
+              <div class="img">
+                <img src="/Training/assets/naruto.jpg" alt="" height="75px" width="75px" />
+              </div>
+              <div class="content">
+                <div class="details">
+                  <h3>Naruto</h3>
+                  <h4>47,069 Pts</h4>
+                </div>
+              </div>
+              <div class="box1">
+                <h1>2</h1>
+              </div>
+            </div>
+          </div>
+          <div class="s2">
+            <div class="m2">
+              <div class="img2">
+                <img src="/Training/assets/ninja.jpg" alt="" height="75px" width="75px" />
+              </div>
+              <div class="content2">
+                <div class="detail2">
+                  <h3>Ninja</h3>
+                  <h4>49,840 Pts</h4>
+                </div>
+              </div>
+              <div class="box2">
+                <h1>1</h1>
+              </div>
+            </div>
+          </div>
+          <div class="s3">
+            <div class="m3">
+              <div class="img">
+                <img src="/Training/assets/young.jpg" alt="" height="75px" width="75px" />
+              </div>
+              <div class="content3">
+                <div class="detail3">
+                  <h3>Young</h3>
+                  <h4>46,556 Pts</h4>
+                </div>
+              </div>
+              <div class="box3">
+                <h1>3</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="view">
+            <button>View Leaderboard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
