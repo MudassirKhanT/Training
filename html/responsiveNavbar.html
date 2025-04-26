@@ -15,7 +15,7 @@
         height: 70px;
         background-color: wheat;
       }
-      ul {
+      .navbar {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -24,24 +24,77 @@
         list-style: none;
       }
       #toggle {
-        transform: translatey(-90px);
+        display: none;
       }
-      #toggle:checked {
-        height: 300px;
-        width: 25%;
+      .silder {
+        height: 700px;
+        width: 150px;
         background-color: black;
-        border: 1px solid black;
+        transform: translatex(-300px);
+        transition-delay: 1s;
+        transition-timing-function: ease-in-out;
+      }
+      #toggle:checked ~ .silder {
+        transform: translatex(0px);
+        background-color: wheat;
+      }
+      .silder {
+        ul {
+          display: flex;
+          flex-direction: column;
+          padding: 30px;
+          gap: 30px;
+          /* gap: 30px; */
+        }
+        li {
+          list-style: none;
+        }
+      }
+      @media screen and (max-width: 1600px) {
+        .menu {
+          display: none;
+        }
+        .notShow {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .notShow {
+          display: block;
+        }
+        .menu {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .notShow {
+          display: none;
+        }
+        .menu {
+          display: block;
+        }
       }
     </style>
   </head>
   <body>
+    <input type="checkbox" name="checkbox" id="toggle" />
     <div class="nav">
-      <ul>
-        <li><input type="checkbox" name="checkbox" id="toggle" /></li>
+      <ul class="navbar">
         <li>
-          <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+          <label for="toggle" class="menu"><i class="fa-solid fa-bars"></i></label>
         </li>
         <li><img src="/Training/assets/aws.png" alt="" height="50" width="50" /></li>
+        <li class="notShow">Home</li>
+        <li class="notShow">About us</li>
+        <li class="notShow">Contact us</li>
+        <li class="notShow">Policy</li>
+        <li class="notShow">Blog</li>
+        <li class="notShow">Commuinty</li>
+        <li class="notShow">Events</li>
+      </ul>
+    </div>
+    <div class="silder">
+      <ul>
         <li>Home</li>
         <li>About us</li>
         <li>Contact us</li>
