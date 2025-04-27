@@ -36,12 +36,31 @@
  * 3.=== strictly equal (checks both value and type)
  * 4.!== not strictly equal
  * 5. = assigns
+ * 6.>
+ * 7.<
+ * 8.>=
+ * 9.<=
  */
 
-let num1 = "25";
-let num2 = 25;
-console.log(typeof num1);
-console.log(`Equals: ${num1 == num2}`);
-console.log(`Not Equals: ${num1 != num2}`);
-console.log(`Strictly Equals: ${num1 === num2}`);
-console.log(`Strictly Not Equals: ${num1 !== num2}`);
+// let num1 = "25";
+// let num2 = 25;
+// console.log(typeof num1);
+// console.log(`Equals: ${num1 == num2}`);
+// console.log(`Not Equals: ${num1 != num2}`);
+// console.log(`Strictly Equals: ${num1 === num2}`);
+// console.log(`Strictly Not Equals: ${num1 !== num2}`);
+
+//--------------Logical operators-----------
+/***
+ * &&
+ * ||
+ * !
+ *
+ */
+
+// let a = 35;
+// let b = 32;
+// console.log(a + b > a - b);
+// console.log(a > 10 && a > 36);
+// console.log(a > 10 || a > 36);
+// console.log(!(a > 10 && a > 36));
