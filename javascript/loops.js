@@ -44,11 +44,11 @@
 // for (let i in n) {
 //   console.log(`${i}:${n[i]}`);
 // }
-let secret = 9;
-while (true) {
-  let num = prompt("Enter the number:");
-  if (num == secret) {
-    console.log("Found the number");
-    break;
-  }
-}
+// let secret = 9;
+// while (true) {
+//   let num = prompt("Enter the number:");
+//   if (num == secret) {
+//     console.log("Found the number");
+//     break;
+//   }
+// }
