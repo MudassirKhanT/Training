@@ -35,5 +35,5 @@
 // };
 // let matches = ["csk", "rcb", "srh", "mi", "gt", "dc", "lsg", "kkr", "rr", "pbks"];
 // schedule(matches);
-const greet = (name) => console.log(`welcome ${name}`);
-greet("Mudassir");
+// const greet = (name) => console.log(`welcome ${name}`);
+// greet("Mudassir");

@@ -12,7 +12,7 @@
 // console.log(marks);
 // marks.splice(2, 1, 10);
 // console.log(marks);
-let arr = [1, 2, 2, 3, 4, 5, 3, 5, 3, 2, 1];
+// let arr = [1, 2, 2, 3, 4, 5, 3, 5, 3, 2, 1];
 //console.log(arr.slice(3, 5));
 // let ans = [];
 // for (let i of arr) {
@@ -26,10 +26,10 @@ let arr = [1, 2, 2, 3, 4, 5, 3, 5, 3, 2, 1];
 //   ans.push(ele * 2);
 // });
 // console.log(ans);
-let ans = [];
-for (let i of arr) {
-  if (ans.indexOf(i) == -1) {
-    ans.push(i);
-  }
-}
-console.log(ans);
+// let ans = [];
+// for (let i of arr) {
+//   if (ans.indexOf(i) == -1) {
+//     ans.push(i);
+//   }
+// }
+// console.log(ans);
