@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .top {
+        height: 60px;
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 15px;
+        background-color: rgb(251, 250, 250);
+      }
+      .top2 {
+        height: 60px;
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 15px;
+      }
+      .output {
+        height: 100px;
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 15px;
+      }
+      .boxes {
+        display: inline-grid;
+        grid-template-columns: 300px 300px 300px 300px;
+        grid-row: 300px 300px;
+        border: 2px solid black;
+        column-gap: 2px;
+        row-gap: 2px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+        .left {
+          padding-left: 10px;
+          button {
+            width: 70px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: white;
+            border: 1px solid gray;
+          }
+        }
+        .right {
+          height: 30px;
+          width: 38%;
+          border: 1px solid black;
+          border-radius: 50px;
+          background-color: white;
+          margin-left: 700px;
+          /* padding-top: 5px; */
+
+          .anchor {
+            display: flex;
+            justify-content: flex-start;
+          }
+          button {
+            width: 70px;
+            height: 28px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            background-color: white;
+            border: none;
+          }
+          .dash {
+            color: white;
+            background-color: black;
+            border-radius: 50px;
+          }
+        }
+        .icons {
+          button {
+            height: 30px;
+            width: 70px;
+            border-radius: 50px;
+            color: black;
+            background-color: whitesmoke;
+            border: none;
+            margin-right: 70px;
+          }
+        }
+      }
+      .top2 {
+        padding: 10px;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .up {
+        display: flex;
+        justify-content: space-between;
+        .o1 {
+          padding: 5px;
+        }
+        span {
+          padding-left: 10px;
+          padding-right: 30px;
+        }
+        .so {
+          padding-left: 150px;
+        }
+        .o2 {
+          margin-right: 55px;
+          span {
+            font-size: 30px;
+          }
+        }
+      }
+      .down {
+        display: flex;
+        margin: 5px;
+        .b1 {
+          height: 30px;
+          width: 70px;
+          background-color: rgb(47, 47, 47);
+          color: white;
+          border-radius: 50px;
+          border: none;
+          padding-right: 20px;
+        }
+        .b2 {
+          height: 30px;
+          width: 60px;
+          margin-left: 35px;
+          background-color: rgb(249, 249, 140);
+          color: black;
+          border-radius: 50px;
+          border: none;
+          padding-right: 20px;
+        }
+        .b3 {
+          height: 30px;
+          width: 250px;
+          /* background-color: rgb(47, 47, 47); */
+          background-color: rgb(200, 196, 196);
+
+          color: black;
+          border-radius: 50px;
+          margin-left: 20px;
+          border: none;
+          padding-right: 180px;
+        }
+        .b4 {
+          height: 30px;
+          width: 60px;
+          /* background-color: rgb(47, 47, 47); */
+          color: black;
+          border-radius: 50px;
+          border: 1px solid black;
+          padding-right: 20px;
+        }
+      }
+      .o3 {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        /* position: relative; */
+        span {
+          padding-right: 55px;
+          position: relative;
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="left">
+          <button type="button">Crextio</button>
+        </div>
+        <div class="right">
+          <div class="anchor">
+            <button class="dash">Dashboard</button>
+            <button>People</button>
+            <button>Hiring</button>
+            <button>Devices</button>
+            <button>Apps</button>
+            <button>Salary</button>
+            <button>Calender</button>
+            <button>Reviews</button>
+          </div>
+        </div>
+        <div class="icons">
+          <button>Settings</button>
+        </div>
+      </div>
+      <div class="top2">
+        <h3>Welcome in, Nixtio</h3>
+      </div>
+      <div class="output">
+        <div class="up">
+          <div class="o1">
+            <span class="si">Interviews</span>
+            <span class="sh">Hired</span>
+            <span class="sp">Project time</span>
+            <span class="so">Output</span>
+          </div>
+          <div class="o2">
+            <span>78</span>
+            <span>56</span>
+            <span>203</span>
+          </div>
+        </div>
+        <div class="down">
+          <div class="btn">
+            <button class="b1">75%</button>
+            <button class="b2">15%</button>
+            <button class="b3">60%</button>
+            <button class="b4">10%</button>
+          </div>
+        </div>
+
+        <div class="o3">
+          <span class="se">Employe</span>
+          <span class="sh">Hirings</span>
+          <span class="sp">Projects</span>
+        </div>
+      </div>
+      <div class="boxes"></div>
+    </div>
+  </body>
+</html>
