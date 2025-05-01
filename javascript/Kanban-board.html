@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban-Board</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .main {
+        display: flex;
+        height: 500px;
+
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .parent,
+      .parent1,
+      .parent2 {
+        height: 300px;
+        width: 300px;
+        border: 1px solid black;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="parent"></div>
+      <div class="parent1"></div>
+      <div class="parent2"></div>
+    </div>
+
+    <div class="child" draggable="true"></div>
+    <script>
+      let drag = "";
+      document.body.addEventListener("dragover", function (e) {
+        e.preventDefault();
+      });
+
+      document.getElementsByClassName("child")[0].addEventListener("dragstart", function (e) {
+        drag = e.target;
+      });
+      document.body.addEventListener("drop", function (e) {
+        e.target.appendChild(drag);
+      });
+    </script>
+  </body>
+</html>
