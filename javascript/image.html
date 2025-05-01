@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image generator</title>
+    <!--qQzBcAqp2AsXFtBo5_s-myaAM_gAwK-NEkfUYYREjSA-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: linear-gradient(to right, rgb(135, 210, 240), rgb(245, 245, 224));
+      }
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        color: white;
+        padding: 10px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .form {
+        height: 100px;
+        width: 800px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .form input {
+        height: 50px;
+        width: 400px;
+        background-color: rgb(204, 242, 229);
+        border: 0;
+        outline: 0;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .form .submit {
+        height: 50px;
+        width: 150px;
+        margin-left: 5px;
+        background-color: rgb(182, 220, 224);
+        border: 0;
+        outline: 0;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+      }
+      #show-imgs {
+        height: 90vh;
+        width: 90vw;
+        /* border: 1px solid black; */
+        margin: 30px 0px 0px 75px;
+        display: inline-grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 5px;
+        row-gap: 5px;
+      }
+      input:hover {
+        background-color: rgb(183, 243, 222);
+      }
+      button:hover {
+        background-color: rgb(170, 233, 240);
+      }
+      ::placeholder {
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+      }
+      .show {
+        /* margin-left: 45%;
+        margin-top: 100px; */
+        height: 50px;
+        width: 150px;
+
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: rgb(182, 220, 224);
+        border: 0;
+        outline: 0;
+        color: white;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Generator Application</h1>
+    <div class="container">
+      <div class="form">
+        <form action="" id="forms">
+          <input type="text" name="" id="input" placeholder="Generate the image......." />
+          <button class="submit">Submit</button>
+        </form>
+        <button class="show" id="show-more">show more</button>
+      </div>
+    </div>
+    <div id="show-imgs"></div>
+
+    <script>
+      let submitForm = document.getElementById("forms");
+      let submitBox = document.getElementById("input");
+      let showimgs = document.getElementById("show-imgs");
+      let showMoreButton = document.getElementById("show-more");
+      showMoreButton.style.display = "none";
+      let word = "";
+      let pages = 1;
+      const accessKey = "qQzBcAqp2AsXFtBo5_s-myaAM_gAwK-NEkfUYYREjSA";
+      async function showImage() {
+        word = submitBox.value;
+        const url = `https://api.unsplash.com/search/photos?page=${pages}&query=${word}&client_id=${accessKey}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+          return new Error(response.status);
+        }
+        const answer = await response.json();
+        const result = answer.results;
+        result.map((r) => {
+          let childDiv = document.createElement("div");
+          let image = document.createElement("img");
+          image.src = r.urls.small;
+          image.style.width = "100%";
+          image.style.height = "100%";
+          image.style.objectFit = "fill";
+
+          let link = document.createElement("a");
+          link.href = r.links.html;
+          link.appendChild(image);
+          childDiv.append(image);
+          childDiv.style.border = "1px solid black";
+          showimgs.appendChild(childDiv);
+        });
+        console.log(result);
+      }
+      submitForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        pages = 1;
+        showimgs.innerHTML = "";
+        showMoreButton.style.display = "block";
+        showImage();
+      });
+
+      showMoreButton.addEventListener("click", (e) => {
+        pages++;
+        showImage();
+      });
+    </script>
+  </body>
+</html>
