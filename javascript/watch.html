@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Watch</title>
+    <style>
+      body {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        background: linear-gradient(to right, rgb(72, 69, 69), rgb(41, 38, 38));
+      }
+      .clock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        height: 300px;
+        width: 400px;
+        margin-left: 50px;
+      }
+      span {
+        font-size: 10rem;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 40px;
+      }
+      h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <center><h1>Digital Clock</h1></center>
+      <div class="clock">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+      </div>
+    </div>
+    <script>
+      let h = document.getElementById("hrs");
+      let m = document.getElementById("min");
+      let s = document.getElementById("sec");
+
+      setInterval(() => {
+        let currentTime = new Date();
+        h.innerText = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+        m.innerText = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+        s.innerText = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+      }, 1000);
+    </script>
+  </body>
+</html>

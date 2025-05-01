@@ -39,11 +39,17 @@
         position: relative;
         left: 550px;
         bottom: 250px;
-        height: 30px;
+        height: 100px;
         width: 100px;
         background-color: rgb(77, 209, 165);
         border: none;
         color: white;
+      }
+      img {
+        position: relative;
+        left: 550px;
+        bottom: 200px;
+        display: none;
       }
       button:hover {
         background-color: rgb(22, 185, 131);
@@ -156,6 +162,7 @@
     </div>
     <button id="btn" onClick="roll()">Start</button>
     <h1 id="head"></h1>
+    <img src="" alt="" id="image" height="100px" width="100px" />
     <script>
       let player1 = prompt("Enter name of player1:");
       let player2 = prompt("Enter name of player2:");
@@ -189,13 +196,23 @@
         const audio = new Audio("/Training/assets/snake.mp3");
         audio.play();
       }
+
       function roll() {
         dice();
+        if (chance == 1) {
+          let img = document.getElementById("image");
+          img.style.display = "block";
+        }
         //player 1
         if (chance % 2 != 0) {
-          let random = Math.floor(Math.random() * 7);
+          let random = 1 + Math.floor(Math.random() * 6);
+          let img = document.getElementById("image");
+          img.setAttribute("src", `/Training/assets/die${random}.jpg`);
           if (cnt + random <= 100) {
             cnt += random;
+          }
+          if (random == 6) {
+            chance += 1;
           }
           if (cnt == 4) {
             win();
@@ -289,7 +306,12 @@
           tile.appendChild(p1);
           chance += 1;
         } else {
-          let random = Math.floor(Math.random() * 7);
+          let random = 1 + Math.floor(Math.random() * 6);
+          let img = document.getElementById("image");
+          img.setAttribute("src", `/Training/assets/die${random}.jpg`);
+          if (random == 6) {
+            chance += 1;
+          }
           if (cnt2 + random <= 100) {
             cnt2 += random;
           }
