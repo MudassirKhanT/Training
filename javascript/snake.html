@@ -10,20 +10,27 @@
         padding: 0;
       }
       body {
-        background: url("/Training/assets/board.jpg");
+        background: url("/Training/assets/night.jpg");
+        background-size: cover;
         background-repeat: no-repeat;
-        background-size: 500px 500px;
-        background-color: rgb(166, 246, 219);
+      }
+      .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
       }
       .container {
         display: grid;
-        /* height: 100vh;
-        width: 100wh; */
         height: 500px;
         width: 500px;
         grid-template-columns: repeat(10, 50px);
         grid-template-rows: repeat(10, 50px);
         align-items: center;
+        background: url("/Training/assets/board.jpg");
+        background-repeat: no-repeat;
+        background-size: 500px 500px;
+        /* background-color: rgb(166, 246, 219); */
         /* border: 1px solid black; */
       }
       .container div {
@@ -37,11 +44,11 @@
       }
       button {
         position: relative;
-        left: 550px;
-        bottom: 250px;
+        left: 10px;
+        bottom: 10px;
         height: 100px;
         width: 100px;
-        background-color: rgb(77, 209, 165);
+        background-color: rgb(240, 74, 76);
         border: none;
         color: white;
       }
@@ -55,117 +62,134 @@
         background-color: rgb(22, 185, 131);
         transition: 1s ease-in;
       }
+      .game {
+        display: flex;
+        position: relative;
+        top: 10px;
+        right: 45px;
+        font-size: 3rem;
+        justify-content: center;
+        color: white;
+      }
+      #image {
+        position: relative;
+        left: 980px;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="div100">100</div>
-      <div class="div99">99</div>
-      <div class="div98">98</div>
-      <div class="div97">97</div>
-      <div class="div96">96</div>
-      <div class="div95">95</div>
-      <div class="div94">94</div>
-      <div class="div93">93</div>
-      <div class="div92">92</div>
-      <div class="div91">91</div>
-      <div class="div81">81</div>
-      <div class="div82">82</div>
-      <div class="div83">83</div>
-      <div class="div84">84</div>
-      <div class="div85">85</div>
-      <div class="div86">86</div>
-      <div class="div87">87</div>
-      <div class="div88">88</div>
-      <div class="div89">89</div>
-      <div class="div90">90</div>
-      <div class="div80">80</div>
-      <div class="div79">79</div>
-      <div class="div78">78</div>
-      <div class="div77">77</div>
-      <div class="div76">76</div>
-      <div class="div75">75</div>
-      <div class="div74">74</div>
-      <div class="div73">73</div>
-      <div class="div72">72</div>
-      <div class="div71">71</div>
-      <div class="div61">61</div>
-      <div class="div62">62</div>
-      <div class="div63">63</div>
-      <div class="div64">64</div>
-      <div class="div65">65</div>
-      <div class="div66">66</div>
-      <div class="div67">67</div>
-      <div class="div68">68</div>
-      <div class="div69">69</div>
-      <div class="div70">70</div>
-      <div class="div60">60</div>
-      <div class="div59">59</div>
-      <div class="div58">58</div>
-      <div class="div57">57</div>
-      <div class="div56">56</div>
-      <div class="div55">55</div>
-      <div class="div54">54</div>
-      <div class="div53">53</div>
-      <div class="div52">52</div>
-      <div class="div51">51</div>
-      <div class="div41">41</div>
-      <div class="div42">42</div>
-      <div class="div43">43</div>
-      <div class="div44">44</div>
-      <div class="div45">45</div>
-      <div class="div46">46</div>
-      <div class="div47">47</div>
-      <div class="div48">48</div>
-      <div class="div49">49</div>
-      <div class="div50">50</div>
-      <div class="div40">40</div>
-      <div class="div39">39</div>
-      <div class="div38">38</div>
-      <div class="div37">37</div>
-      <div class="div36">36</div>
-      <div class="div35">35</div>
-      <div class="div34">34</div>
-      <div class="div33">33</div>
-      <div class="div32">32</div>
-      <div class="div31">31</div>
-      <div class="div21">21</div>
-      <div class="div22">22</div>
-      <div class="div23">23</div>
-      <div class="div24">24</div>
-      <div class="div25">25</div>
-      <div class="div26">26</div>
-      <div class="div27">27</div>
-      <div class="div28">28</div>
-      <div class="div29">29</div>
-      <div class="div30">30</div>
-      <div class="div20">20</div>
-      <div class="div19">19</div>
-      <div class="div18">18</div>
-      <div class="div17">17</div>
-      <div class="div16">16</div>
-      <div class="div15">15</div>
-      <div class="div14">14</div>
-      <div class="div13">13</div>
-      <div class="div12">12</div>
-      <div class="div11">11</div>
-      <div class="div1">1</div>
-      <div class="div2">2</div>
-      <div class="div3">3</div>
-      <div class="div4">4</div>
-      <div class="div5">5</div>
-      <div class="div6">6</div>
-      <div class="div7">7</div>
-      <div class="div8">8</div>
-      <div class="div9">9</div>
-      <div class="div10">10</div>
+    <h1 class="game">Snake And Ladders Game</h1>
+    <div class="main">
+      <div class="container">
+        <div class="div100">100</div>
+        <div class="div99">99</div>
+        <div class="div98">98</div>
+        <div class="div97">97</div>
+        <div class="div96">96</div>
+        <div class="div95">95</div>
+        <div class="div94">94</div>
+        <div class="div93">93</div>
+        <div class="div92">92</div>
+        <div class="div91">91</div>
+        <div class="div81">81</div>
+        <div class="div82">82</div>
+        <div class="div83">83</div>
+        <div class="div84">84</div>
+        <div class="div85">85</div>
+        <div class="div86">86</div>
+        <div class="div87">87</div>
+        <div class="div88">88</div>
+        <div class="div89">89</div>
+        <div class="div90">90</div>
+        <div class="div80">80</div>
+        <div class="div79">79</div>
+        <div class="div78">78</div>
+        <div class="div77">77</div>
+        <div class="div76">76</div>
+        <div class="div75">75</div>
+        <div class="div74">74</div>
+        <div class="div73">73</div>
+        <div class="div72">72</div>
+        <div class="div71">71</div>
+        <div class="div61">61</div>
+        <div class="div62">62</div>
+        <div class="div63">63</div>
+        <div class="div64">64</div>
+        <div class="div65">65</div>
+        <div class="div66">66</div>
+        <div class="div67">67</div>
+        <div class="div68">68</div>
+        <div class="div69">69</div>
+        <div class="div70">70</div>
+        <div class="div60">60</div>
+        <div class="div59">59</div>
+        <div class="div58">58</div>
+        <div class="div57">57</div>
+        <div class="div56">56</div>
+        <div class="div55">55</div>
+        <div class="div54">54</div>
+        <div class="div53">53</div>
+        <div class="div52">52</div>
+        <div class="div51">51</div>
+        <div class="div41">41</div>
+        <div class="div42">42</div>
+        <div class="div43">43</div>
+        <div class="div44">44</div>
+        <div class="div45">45</div>
+        <div class="div46">46</div>
+        <div class="div47">47</div>
+        <div class="div48">48</div>
+        <div class="div49">49</div>
+        <div class="div50">50</div>
+        <div class="div40">40</div>
+        <div class="div39">39</div>
+        <div class="div38">38</div>
+        <div class="div37">37</div>
+        <div class="div36">36</div>
+        <div class="div35">35</div>
+        <div class="div34">34</div>
+        <div class="div33">33</div>
+        <div class="div32">32</div>
+        <div class="div31">31</div>
+        <div class="div21">21</div>
+        <div class="div22">22</div>
+        <div class="div23">23</div>
+        <div class="div24">24</div>
+        <div class="div25">25</div>
+        <div class="div26">26</div>
+        <div class="div27">27</div>
+        <div class="div28">28</div>
+        <div class="div29">29</div>
+        <div class="div30">30</div>
+        <div class="div20">20</div>
+        <div class="div19">19</div>
+        <div class="div18">18</div>
+        <div class="div17">17</div>
+        <div class="div16">16</div>
+        <div class="div15">15</div>
+        <div class="div14">14</div>
+        <div class="div13">13</div>
+        <div class="div12">12</div>
+        <div class="div11">11</div>
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+        <div class="div5">5</div>
+        <div class="div6">6</div>
+        <div class="div7">7</div>
+        <div class="div8">8</div>
+        <div class="div9">9</div>
+        <div class="div10">10</div>
+      </div>
+      <button id="btn" onClick="roll()">Start</button>
+      <h1 id="head"></h1>
     </div>
-    <button id="btn" onClick="roll()">Start</button>
-    <h1 id="head"></h1>
     <img src="" alt="" id="image" height="100px" width="100px" />
+
     <script>
-      let player1 = prompt("Enter name of player1:");
-      let player2 = prompt("Enter name of player2:");
+      // let player1 = prompt("Enter name of player1:");
+      // let player2 = prompt("Enter name of player2:");
       let cnt = 1;
       let cnt2 = 1;
 
