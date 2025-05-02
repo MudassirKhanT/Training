@@ -1,13 +1,13 @@
-import car from "./assets/car-4.avif";
-function Products() {
-  let price = 2000;
+import style from "./Products.module.css";
+// import car from "../assets/car-4.avif";
+function Products(props) {
   return (
     <>
-      <div className="card">
-        <img src={car} alt="car" />
-        <p>A Lengendary Car</p>
-        {/* <p>$10000</p> */}
-        <p>${price}</p>
+      <div className={style.card}>
+        <img src={props.image} alt="car" />
+        <p>{props.name}</p>
+
+        <p>${props.price}</p>
       </div>
     </>
   );
