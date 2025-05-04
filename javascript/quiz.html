@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+      .quiz-container {
+        background: #fff;
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      .option {
+        margin: 10px 0;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2 id="question">Question text</h2>
+      <div id="options"></div>
+      <button onclick="submitAnswer()">Submit</button>
+      <p id="score"></p>
+    </div>
+
+    <script>
+      const quiz = [
+        {
+          question: "What does HTML stand for?",
+          options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language"],
+          answer: "Hyper Text Markup Language",
+        },
+        {
+          question: "Which tag is used to define a CSS style?",
+          options: ["<style>", "<css>", "<script>"],
+          answer: "<style>",
+        },
+        {
+          question: "Which property is used to change the background color?",
+          options: ["bgColor", "background-color", "color"],
+          answer: "background-color",
+        },
+        {
+          question: "Inside which HTML element do we put the JavaScript?",
+          options: ["<js>", "<script>", "<javascript>"],
+          answer: "<script>",
+        },
+        {
+          question: "How do you write 'Hello' in an alert box?",
+          options: ["msg('Hello')", "alertBox('Hello')", "alert('Hello')"],
+          answer: "alert('Hello')",
+        },
+      ];
+
+      let current = 0;
+      let score = 0;
+
+      function loadQuestion() {
+        const q = quiz[current];
+        document.getElementById("question").innerText = q.question;
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+        q.options.forEach((opt) => {
+          optionsDiv.innerHTML += `
+          <div class="option">
+            <input type="radio" name="option" value="${opt}" /> ${opt}
+          </div>
+        `;
+        });
+      }
+
+      function submitAnswer() {
+        const selected = document.querySelector('input[name="option"]:checked');
+        if (!selected) {
+          alert("Please select an option.");
+          return;
+        }
+        if (selected.value === quiz[current].answer) {
+          score++;
+        }
+        current++;
+        if (current < quiz.length) {
+          loadQuestion();
+        } else {
+          document.getElementById("quiz-container").innerHTML = `<h2>You scored ${score}/${quiz.length}</h2>`;
+        }
+      }
+
+      loadQuestion();
+    </script>
+  </body>
+</html>
