@@ -3,9 +3,10 @@
 // import book2 from "../assets/book2.jpg";
 import UseFetch from "../UseFetch";
 import Books from "./Books";
+import loader from "../../Data/assets/loader.jpeg";
 // import book2 from "../../src/assets/book2.jpg";
 function Bookslist() {
-  const [book, setBook] = UseFetch("http://localhost:3000/books");
+  const [book, setBook, error] = UseFetch("http://localhost:3000/books");
   // const [loading, setLoading] = useState(false);
 
   //------------------Fetching Data From Json data-----------
@@ -28,6 +29,11 @@ function Bookslist() {
     setBook(newBooks);
     // console.log("New:", newBooks);
   }
+
+  if (!book) {
+    return <>{error ? <p>Error while fetching the data the error is = {error}</p> : <img src={loader} />}</>;
+  }
+
   const listOFBooks = book.map((b, index) => (
     // console.log(b);
     <Books key={index} image={b.image} bookName={b.bookName} paise={b.paise} id={b.id} delete={handleDelete} />
