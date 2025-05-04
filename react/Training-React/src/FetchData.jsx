@@ -1,36 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
 function FetchData() {
-  const [users, setUsers] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
-  // Fetch data when component mounts
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users") // Sample API
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-        // setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        // setLoading(false);
-      });
-  }, []);
-
-  // if (loading) return <p>Loading users...</p>;
+  const [aipData, setApiData] = useState([]);
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((respose) => respose.json())
+    .then((data) => setApiData(data))
+    .catch((err) => console.log(err));
 
   return (
-    <div>
-      <h2>User List</h2>
-
-      {users.map((user) => (
-        <li>
-          <strong>{user.name}</strong> - {user.email}
-        </li>
-      ))}
-    </div>
+    <>
+      <h1>Api Data Fetched</h1>
+      <ul>
+        {aipData.map((api) => (
+          <li key={api.id}>
+            {api.title}-{api.userID}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
-
 export default FetchData;
