@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import "./App.css";
 // import Button from "./Button";
 import Bookslist from "./Books/Bookslist";
-import Elecroniclist from "./Electroniclist";
-import FetchData from "./FetchData";
+// import Elecroniclist from "./Electroniclist";
+// import FetchData from "./FetchData";
 // import Books from "./Books/Books";
 
 // import Products from "./Products/Products";
@@ -23,7 +23,7 @@ function App() {
   });
   return (
     <>
-      <FetchData />
+      {/* <FetchData /> */}
       {/* <Elecroniclist /> */}
       {/* <Button /> */}
       {/* <Navbar />
@@ -33,7 +33,7 @@ function App() {
       <Products image={car3} name="ModelB" price="$3000" show={true} />
       <Products image={car4} name="ModelC" price="$4000" show={true} /> */}
       {/* <Products image={die6} name="ModelD" price="$5000" /> */}
-      {/* <Bookslist /> */}
+      <Bookslist />
     </>
   );
 }

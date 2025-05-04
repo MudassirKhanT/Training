@@ -1,36 +1,17 @@
 import { useEffect, useState } from "react";
-import book1 from "../assets/book1.jpg";
-import book2 from "../assets/book2.jpg";
+// import book1 from "../assets/book1.jpg";
+// import book2 from "../assets/book2.jpg";
 import Books from "./Books";
 // import book2 from "../../src/assets/book2.jpg";
 
 function Bookslist() {
-  const [book, setBook] = useState([
-    {
-      id: 1,
-      image: book1,
-      bookName: "Data Structure & Algorithm",
-      paise: 999,
-    },
-    {
-      id: 2,
-      image: book2,
-      bookName: "Computer Networks",
-      paise: 1999,
-    },
-    {
-      id: 3,
-      image: book1,
-      bookName: "Object Oriented using Java",
-      paise: 2999,
-    },
-    {
-      id: 4,
-      image: book2,
-      bookName: "Operating System",
-      paise: 3999,
-    },
-  ]);
+  const [book, setBook] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/books")
+      .then((res) => res.json())
+      .then((data) => setBook(data))
+      .catch((err) => console.log(err));
+  }, []);
   // useEffect(() => {
   //   console.log("Use Effect called in booklist");
   // }, [book]);

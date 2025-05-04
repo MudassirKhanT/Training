@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "image": "http://localhost:3000/assets/book1.jpg",
+      "bookName": "Data Structure & Algorithm",
+      "paise": 999
+    },
+    {
+      "id": 2,
+      "image": "http://localhost:3000/assets/book2.jpg",
+      "bookName": "Computer Networks",
+      "paise": 1999
+    },
+    {
+      "id": 3,
+      "image": "http://localhost:3000/assets/book1.jpg",
+      "bookName": "Object Oriented using Java",
+      "paise": 2999
+    },
+    {
+      "id": 4,
+      "image": "http://localhost:3000/assets/book2.jpg",
+      "bookName": "Operating System",
+      "paise": 3999
+    }
+  ]
+}
