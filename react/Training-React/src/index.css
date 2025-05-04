@@ -1,0 +1,30 @@
+/* .btn {
+  height: 100px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+} */
+.card {
+  height: 400px;
+  width: 300px;
+  background-color: skyblue;
+  margin: 10px;
+  display: inline-block;
+}
+
+.card img {
+  height: 200px;
+  width: 200px;
+  padding-left: 50px;
+  margin-top: 15px;
+}
+.card p {
+  text-align: center;
+}
