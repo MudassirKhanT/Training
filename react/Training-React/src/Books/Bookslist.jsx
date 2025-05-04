@@ -1,19 +1,12 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // import book1 from "../assets/book1.jpg";
 // import book2 from "../assets/book2.jpg";
+import UseFetch from "../UseFetch";
 import Books from "./Books";
 // import book2 from "../../src/assets/book2.jpg";
 function Bookslist() {
-  const [book, setBook] = useState([]);
+  const [book, setBook] = UseFetch("http://localhost:3000/books");
   // const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      fetch("http://localhost:3000/books")
-        .then((res) => res.json())
-        .then((data) => setBook(data))
-        .catch((err) => console.log(err));
-    }, 2000);
-  }, []);
 
   //------------------Fetching Data From Json data-----------
   // useEffect(() => {
