@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 const UseFetch = (url) => {
-  const [book, setBook] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
     setTimeout(() => {
       fetch(url)
         .then((res) => res.json())
-        .then((data) => setBook(data))
+        .then((data) => setData(data))
         .catch((err) => console.log(err));
     }, 2000);
-  }, [book]);
-  return [book, setBook];
+  }, [url]);
+  return [data, setData];
 };
 export default UseFetch;
