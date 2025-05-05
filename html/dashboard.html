@@ -1,460 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <script src="https://cdnjs.cloudflare.co>m/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background: linear-gradient(to right, rgb(209, 202, 202), rgb(248, 248, 167));
-      }
-      .top {
-        height: 60px;
-        width: 100%;
-        border: 2px solid black;
-        margin-bottom: 15px;
-      }
-      .top2 {
-        height: 60px;
-        width: 100%;
-        border: 2px solid black;
-        margin-bottom: 15px;
-      }
-      .output {
-        height: 100px;
-        width: 100%;
-        border: 2px solid black;
-        margin-bottom: 15px;
-      }
+        body{
+            background-color: rgb(117, 113, 113,0.5);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container{
+          /* background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gold-yellow-gradient-studio-wall-well-use-as-background-layout-banner-product-presentation_1258-63564.jpg'); */
+          background: linear-gradient(180deg,lightgrey,lightyellow);
+          background-size: 980px,9000px;
+            height: 1000px;
+            width: 9500px;
+            margin-top:50px;
+            border-radius: 50px;
+            border: 1px solid black;
+        }
+        .nav{
+            height: 50px;
+            border-radius: 15px;
+            /* background-color: white; */
+        }
+        #cerxtio{
+            position: relative;
+            top: 45px;
+            left:10px;
+            border-radius: 50px;
+        }
+        #p25{
+            border-radius: 50px;
+            height: 40px;
+            width:100px;
+        }
+        #p15{
+            border-radius: 50px;
+            height: 40px;
+            width:100px;
+            position: relative;
+            top:-39px;
+            left:130px;
 
-      .top {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 15px;
-        .left {
-          padding-left: 10px;
-          button {
-            width: 70px;
-            height: 30px;
-            border-radius: 50px;
-            background-color: white;
-            border: 1px solid gray;
-          }
-        }
-        .right {
-          height: 30px;
-          width: 38%;
-          border: 1px solid black;
-          border-radius: 50px;
-          background-color: white;
-          margin-left: 700px;
-          /* padding-top: 5px; */
 
-          .anchor {
-            display: flex;
-            justify-content: flex-start;
-          }
-          button {
-            width: 70px;
-            height: 28px;
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-            background-color: white;
-            border: none;
-          }
-          .dash {
-            color: white;
-            background-color: black;
+        }
+        .progressb{
+            border: 0px solid black;
+            height: 50px;
+            width: 50%;
+        }
+        #pp10{
             border-radius: 50px;
-          }
+            height: 40px;
+            width:100px;
+            position: relative;
+            top:-117px;
+            left:530px;
         }
-        .icons {
-          button {
-            height: 30px;
-            width: 70px;
+        #p10{
             border-radius: 50px;
-            color: black;
-            background-color: whitesmoke;
-            border: none;
-            margin-right: 70px;
-          }
-        }
-      }
-      .top2 {
-        padding: 10px;
-        font-size: 30px;
-        font-weight: 100;
-      }
-      .up {
-        display: flex;
-        justify-content: space-between;
-        .o1 {
-          padding: 5px;
-        }
-        span {
-          padding-left: 10px;
-          padding-right: 30px;
-        }
-        .so {
-          padding-left: 150px;
-        }
-        .o2 {
-          margin-right: 55px;
-          span {
-            font-size: 30px;
-          }
-        }
-      }
-      .down {
-        display: flex;
-        margin: 5px;
-        .b1 {
-          height: 30px;
-          width: 70px;
-          background-color: rgb(47, 47, 47);
-          color: white;
-          border-radius: 50px;
-          border: none;
-          padding-right: 20px;
-        }
-        .b2 {
-          height: 30px;
-          width: 60px;
-          margin-left: 35px;
+            height: 40px;
+            width:250px;
+            position: relative;
+            top:-80px;
+            left:270px;
 
-          color: black;
-          border-radius: 50px;
-          border: none;
-          padding-right: 20px;
+   
         }
-        .b3 {
-          height: 30px;
-          width: 250px;
-          color: black;
-          border-radius: 50px;
-          margin-left: 20px;
-          border: none;
-          padding-right: 180px;
+        .e{
+            border: 0px solid black;
         }
-        .b4 {
-          height: 30px;
-          width: 60px;
-          /* background-color: rgb(47, 47, 47); */
-          color: black;
-          border-radius: 50px;
-          border: 1px solid black;
-          padding-right: 20px;
+        .h{
+            border: 0px solid black;
+            
         }
-      }
-      .o3 {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        /* position: relative; */
-        span {
-          padding-right: 55px;
-          position: relative;
-          bottom: 20px;
+        .p{
+            border: 0px solid black;
         }
-      }
-      .boxes {
-        height: 700px;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 24% 24% 24% 24%;
-        grid-row: 300px 300px;
-        border: 2px solid black;
-        column-gap: 10px;
-        row-gap: 2px;
-        .b1 {
-          grid-column: 1/2;
-          grid-row: 1/2;
-          border: 2px solid blue;
-          margin-left: 15px;
-          border-radius: 25%;
-          background: url("/Training/assets/child.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
-          padding-bottom: 100px;
-          display: flex;
-          flex-direction: column;
-          span {
+        .grid-contents{
+            gap:25px;
+            margin-top: -90px;
+            display: grid;
+            grid-template-columns: repeat(4,300px);
+            grid-template-rows: repeat(2,350px);
+        }
+        .emp,.hir,.proj{
             position: relative;
-            top: 250px;
-            left: 30px;
-            color: white;
-          }
-          button {
-            height: 30px;
-            width: 90px;
+            top: -15px;
+            right: 43px;
+        }
+        .e-h-p{
             position: relative;
+            left:950px;
+            top:-60px;
+              border: 0px solid black;
+              width: 25%;
+              display: flex;
+              justify-content: space-around;
+            }
+        .name{
+            border: 0px solid cornsilk;
             border-radius: 50px;
-            border: 1px solid white;
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        .pro{
+            border: 1px solid cornsilk;
+            grid-column:2/3;
+            grid-row: 1/2;
+        }
+        .timetracker{
+            border: 1px solid cornsilk;
+            grid-column:3/4;
+            grid-row: 1/2;
+        } 
+        .onboarding{
+            border: 1px solid cornsilk;
+            grid-column:4/5;
+            grid-row: 1/3;
+        }   
+        .pc{
+            border: 1px solid cornsilk;
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+        .cal{
+            border: 1px solid cornsilk;
+            grid-column:2/4;
+            grid-row: 2/3;
+        }
+        .on-task{
+            border: 1px solid cornsilk;
+            grid-column:3/4;
+            grid-row:2/3;
+        } 
+        #p120{
             color: white;
-            background: none;
-            top: 200px;
-            left: 230px;
-          }
-          button:hover {
-            background-color: white;
-            color: black;
-          }
-          .s1 {
-            font-size: 30px;
-          }
-          .s2 {
-            font-size: medium;
-          }
-          /* justify-self: flex-end; */
+            position: relative;
+            top: -90px;
+            left:220px;
         }
-        .b2 {
-          grid-column: 2/3;
-          grid-row: 1/2;
-          border: 2px solid blueviolet;
-          border-radius: 25%;
-          background-color: white;
-          h3 {
+        #arrow{
             position: relative;
-            left: 30px;
-            top: 40px;
-            font-size: 20px;
-            font-weight: lighter;
-          }
-          span {
-            position: relative;
-            left: 30px;
-            top: 60px;
-            font-size: 25px;
-            font-weight: 500;
-          }
-          .s0 {
-            position: relative;
-            top: 80px;
-          }
-          .s1,
-          .s2 {
-            padding-left: 10px;
-            font-size: medium;
-          }
-          .s2 {
-            padding-left: 65px;
-          }
-          img {
-            position: relative;
-            left: 30px;
-            top: 100px;
-          }
+            left:250px;
+            top:-45px
         }
-        .b3 {
-          grid-column: 3/4;
-          grid-row: 1/2;
-          border: 2px solid yellow;
-          border-radius: 25%;
-          h3 {
+        .card{
+            border-radius: 25px;
+        }
+        .pro,.timetracker,.onboarding,.pc,.cal,.on-task{
+            background-color: rgb(242, 238, 233);
+            border-radius:25px
+        }
+       
+        .ele{
             position: relative;
-            left: 30px;
             top: 30px;
-            font-size: 20px;
-            font-weight: lighter;
-          }
-          img {
+            height: 50px;
+            width: 100%;
+            border: 0px solid black;
+        }
+        .sub{
             position: relative;
-            left: 100px;
-            top: 50px;
-            border-radius: 50%;
-          }
+            top:40px;
+            gap: 12px;
+            display: flex;
         }
-        .b4 {
-          grid-column: 4/5;
-          grid-row: 1/3;
-          border: 2px solid green;
-          border-radius: 25%;
+        #thisweek{
+            position: relative;
+            top:8px;
+            left:70px;
         }
-        .b5 {
-          grid-column: 1/2;
-          grid-row: 2/3;
-          border: 2px solid blue;
-          margin-left: 15px;
-          border-radius: 25%;
+        .cont{
+            border:0px solid black;
+            position: relative;
+            top:30px;
+            height: 60px ;
+            width: 280px;
+            
+        }
+        #t30{
+            width:35%;
+            height:40px;
+            border-radius:50px;
 
-          hr {
-            border: 1px dotted #201f1f;
-            border-style: none none dotted;
-            color: #fff;
-            background-color: #fff;
-            width: 250px;
-          }
+        }
+        #t25{
+            width: 12%;
+        }
+        #per{
+            position: relative;
+            top: -55px;
+            left:220px;
+        }
+        .task
+        {
+            position: relative;
+            top:20px;
+            
 
-          .s1 {
-            position: relative;
-            left: 30px;
-            top: 20px;
-          }
-          .s2 {
-            position: relative;
-            left: 30px;
-            top: 40px;
-          }
-          img {
-            position: relative;
-            left: 30px;
-            top: 60px;
-          }
-          .mac {
-            position: relative;
-            left: 40px;
-            top: 40px;
-          }
-          .version {
-            position: relative;
-            left: 92px;
-            top: 50px;
-          }
-          .s3 {
-            position: relative;
-            left: 30px;
-            top: 70px;
-          }
-          .s4 {
-            position: relative;
-            left: 30px;
-            top: 100px;
-          }
-          .hr1 {
-            position: relative;
-            left: 30px;
-            top: 25px;
-          }
-          .hr2 {
-            position: relative;
-            left: 30px;
-            top: 50px;
-          }
-          .hr3 {
-            position: relative;
-            left: 30px;
-            top: 60px;
-          }
-          .hr4 {
-            position: relative;
-            left: 30px;
-            top: 80px;
-          }
-          .hr5 {
-            position: relative;
-            left: 30px;
-            top: 110px;
-          }
         }
-        .b6 {
-          grid-column: 2/4;
-          grid-row: 2/3;
-          border: 2px solid blueviolet;
-          border-radius: 25%;
+        .black{
+            position: relative;
+            left:100px;
+            top:-63px;
         }
-      }
+        #t0{
+            width: 60px;
+            height: 40px;
+            border-radius: 50px;
+            /* top:-40px; */
+        }
+        .grey{
+            position: relative;
+            top:-128px;
+            left:203px;
+        }
+        .Intereview,.Teammeeting,.Projectupdate,.d,.hr{
+            height: 40px;
+            display: flex;
+            gap:50px;
+            justify-content: space-around;
+            border: 0px solid black;
+        }
+        .d,.Projectupdate,.hr{
+            margin-top: 20px;
+        }
+     
+        #s13{
+            position: relative;
+            top:-20px;
+            left:70px;
+            color:grey
+        }
+        .play{
+            margin-top:30px;
+            display: flex;
+            border: 1px solild black;
+        }
+        #alrm
+        {
+            margin-left: 140px;
+        }
+        #tt{
+            margin-top:-30px;
+            height: 150px;
+            margin-left: 50px;
+        }
+        .a{
+            padding:4px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+        .weeks{
+            justify-content: space-evenly;
+            display: flex;
+
+            margin-left: 10px;
+        }
+        .lines{
+            border: 0px dashed grey;
+            height:180px;
+            width:500px;
+            position: relative;
+            left:71px;
+            display: flex;
+            top:-165px;
+            /* gap:50px; */
+            justify-content: space-between;
+        }
+        .l1,.l2,.l3,.l4,.l5,.l6{
+            border: 1px dashed grey;
+            height:150px;
+            width: 2px;
+            
+
+        }
+        .blacktheme{
+            position: relative;
+            top:-220px;
+           left:400px;
+
+        }
+        .whitey{
+            position: relative;
+            top:-150px;
+           left:300px;
+           color: black;
+
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <div class="top">
-        <div class="left">
-          <button type="button">Crextio</button>
+        <button type="button" id="cerxtio" class="btn btn-outline-secondary">cerxtio</button>
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><button type="button" class="btn btn-secondary">Dashboard</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><button type="button" class="btn ">People</button></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><button type="button" class="btn ">Hiring</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Devices</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Apps</button></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Salary</button></a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Calender</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Devices</button></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><button type="button" class="btn ">Reviews</button></a>
+            </li>
+              
+         
+        </ul>
+        <div class="middle">
+        <h1>Welcome in,Nixtio</h1>
+        <p>Interview</p>
         </div>
-        <div class="right">
-          <div class="anchor">
-            <button class="dash">Dashboard</button>
-            <button>People</button>
-            <button>Hiring</button>
-            <button>Devices</button>
-            <button>Apps</button>
-            <button>Salary</button>
-            <button>Calender</button>
-            <button>Reviews</button>
+          <div class="progressb">
+                <div class="progress" id="p25" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 100%">75%</div>
+                </div>
+                <div class="progress" id="p15" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: 100%">15%</div>
+                </div>
+                <div class="progress" id="p10" role="progressbar" aria-label="Info striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped bg-grey" style="width: 60%">60%</div>
+               
+                </div>
+                <button id="pp10" type="button" class="btn btn-outline-light">10%</button>
           </div>
+          <div class="e-h-p">
+            <div class="e">
+                <h1 class="display-6">78</h1>
+                <div class="emp">
+                    <p >Employee</p>
+                </div>
+            </div>
+            <div class="h">
+                <h1 class="display-6">56</h1>
+                <div class="hir">
+                    <p>Hirings</p>
+                </div>
+            </div>
+            <div class="p">
+                <h1 class="display-6">203</h1>
+                <div class="proj">
+                    <p>Projects</p>
+                </div>
+            </div>
+
         </div>
-        <div class="icons">
-          <button>Settings</button>
-        </div>
-      </div>
-      <div class="top2">
-        <h3>Welcome in, Nixtio</h3>
-      </div>
-      <div class="output">
-        <div class="up">
-          <div class="o1">
-            <span class="si">Interviews</span>
-            <span class="sh">Hired</span>
-            <span class="sp">Project time</span>
-            <span class="so">Output</span>
-          </div>
-          <div class="o2">
-            <span>78</span>
-            <span>56</span>
-            <span>203</span>
-          </div>
-        </div>
-        <div class="down">
-          <div class="btn">
-            <button class="b1">75%</button>
-            <button class="b2">15%</button>
-            <button class="b3">60%</button>
-            <button class="b4">10%</button>
-          </div>
+        <div class="grid-contents">
+            <div class="name">
+                
+                <div class="card" style="width: 18rem;">
+                    <img height="220px" style="border-radius: 25px;" src="/assets/child.jpg" class="card-img-top" alt="bsdk">
+                    <div class="card-body">
+                      <p id="cardtext" class="display-6">Lora Pitosn</p>
+                      <p id="cardtext" class="display-7">Ux/Ui designer</p>
+                    </div>
+                    
+                  </div>
+                  <button id="p120" class="display-7 btn btn-outline-primary btn-dark" >$120</button>
+
+            </div>
+            <div class="pro">
+                <div class="ele">
+                    <h2 class="display-6">Progress</h2>
+                    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
+                      </svg>
+                </div>
+                <div class="sub">
+                    <h2 class="display-6">61.h</h2>
+                    <p >Work Time</p>
+                   
+                </div>
+                <p id="thisweek">this week</p>
+                <img  width="270px" src="/assets/chart.png" alt="chart bhi">
+            </div>
+            <div class="timetracker">
+                <div class="ele">
+                    <h1 class="display-6">TimeTracker
+                    </h1>
+                    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
+                      </svg>
+                      <div class="round">
+                        <img id="tt" src="/assests/timetracker.png" alt="">
+                      </div>
+                      <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="alrm" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                        <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z"/>
+                        <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1"/>
+                      </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="onboarding">
+                <div class="cont">
+                    <h1 class="display-6">On Boarding</h1>
+                    <h1 id="per" class="display-6">18%</h1>
+                </div>
+                <div class="task">
+                    <div class="yellow">
+                        <label for="t30">30%</label>
+                        <div class="progress" id="t30" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-warning" style="width: 100%">Task</div>
+                        </div>
+
+                    </div>
+                    <div class="black">
+                        <label for="t25">25%</label>
+                        <div class="progress" id="t30" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-dark" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="grey">
+                        
+                            <label for="t25">0%</label>
+                            <div class="progress" id="t0" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-secondary" style="width: 100%"></div>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="card text-bg-dark mb-3" style="max-width: 44rem; height: 471px;">
+                    <div class="card-header display-7">OnBoardingTask</div>
+                    <div class="card-body">
+                      <h5 class="card-title">OnBoardingTask</h5>
+                      <div class="Intereview">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                            <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                          </svg>
+                          <strike style="color:grey">Interview</strike>
+                          <input type="radio" checked >
+                          
+                      </div>
+                      <h6 class="display-6" style="font-size:15px" id="s13">September13</h6>
+
+                      <div class="Teammeeting" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-lightning" viewBox="0 0 16 16">
+                            <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1z"/>
+                          </svg>
+                          <strike style="color:grey">Teammeeting</strike>
+                          <input type="radio" checked >
+                          
+                      </div>
+
+                      <div class="Projectupdate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>
+                          </svg>
+                          <p style="color:rgb(197, 184, 184)">
+                             Project update</p>
+                             <input type="radio" >
+                      </div>
+                      <div class="d">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
+                            <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1z"/>
+                          </svg>
+                          <p style="color:rgb(197, 184, 184)">
+                            Discuss goals</p>
+                            <input type="radio" >
+                      </div>
+                      <div class="hr">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                          </svg>
+                          <p style="color:rgb(197, 184, 184)">
+                        HRpolicyReviews</p>
+                            <input type="radio" >
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="pc">
+                <div class="pension" style="margin-top: 28px; font-size: 20px; gap: 50px; display: flex;">
+                    <p class="display-7">Pension contribution</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                        <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                      </svg>
+
+                </div>
+                <div class="dev" style="display: flex; gap:160px">
+                    <p class="display-7" style="font-size: 20px;">Devices</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/>
+                      </svg>
+                </div>
+                <div class="poflap" style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                        <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                      </svg>
+                      <label for="MacBookAir">MacBookAir</label>
+                      <p style="margin-top: 20px; position: relative; right: 75px;">Version M1</p>
+                </div>
+                <div class="compensation" style="display: flex; gap:40px">
+                    <p class="display-7" style="font-size: 20px;">Pension contribution</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                        <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                      </svg>
+                </div>
+                <div class="ebenefits" style="display: flex; gap:60px">
+                    <p class="display-7" style="font-size: 20px;">Employee Benefits</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                        <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                      </svg>
+                </div>
+
+            </div>
+            <div class="cal">
+                <div class="a">
+                    <button class="btn btn-light rounded-pill">August</button>
+                    <h2><button class="btn btn-dark rounded-pill" >september 2024</button></h2>
+                    <button class="btn btn-light rounded-pill">october</button>
+
+                </div>
+                <div class="weeks">
+                    <div class="mon">
+                        <label for="mon" style="color:grey">Mon</label>
+                    <p id="mon"  style="color:grey">22</p>
+                    </div>
+                    <div class="tue">
+                        <label for="mon" style="color:grey">Tue</label>
+                    <p id="mon"  style="color:grey">22</p>
+                    </div>
+                    <div class="wed">
+                        <label for="mon" style="color:grey">Wed</label>
+                    <p id="mon"  style="color:grey">22</p>
+                    </div>
+                    <div class="thur">
+                        <label for="mon" style="color:grey">thur</label>
+                    <p id="mon"  style="color:grey">22</p>
+                    </div>
+                    <div class="fri">
+                        <label for="mon" style="color:grey">fri</label>
+                    <p id="mon"  style="color:grey">22</p>
+                    </div>
+                   <div class="sat">
+                    <label for="mon" style="color:grey">sat</label>
+                    <p id="mon"  style="color:grey">22</p>
+                   </div>
+                </div>
+                <div class="t">
+                    <p class="display-7">8:00am</p>
+                    <p>9:00am</p>
+                    <p>10:00am</p>
+                    <p>11:00am</p>
+                </div>
+                <div class="lines">
+                    <div class="l1">
+
+                    </div>
+                    <div class="l2">
+
+                    </div>
+                    <div class="l3"></div>
+                    <div class="l4"></div>
+                    <div class="l5"></div>
+                    <div class="l6"></div>
+                </div>
+            </div>
+            <div class="blacktheme">
+                <div class="progress" style="height: 30px; border-radius: 25px;"  role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-dark" style="width: 100%;" >weekly Team sync</div>
+                    
+                </div> 
+            </div>
+            <div class="whitey">
+                <div class="progress" style="height: 30px; border-radius: 25px; color:black"  role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-secondary" style="width: 100%;" >weekly Team sync</div>
+                    
+                </div> 
+            </div>
+           
         </div>
 
-        <div class="o3">
-          <span class="se">Employe</span>
-          <span class="sh">Hirings</span>
-          <span class="sp">Projects</span>
-        </div>
-      </div>
-      <div class="boxes">
-        <div class="b1">
-          <span class="s1">Lara Piterson</span>
-          <span class="s2">UX/UI Designer</span>
-          <button>$1,200</button>
-        </div>
-        <div class="b2">
-          <!-- <h3>Progress</h3>
-          <span class="s0">6.1 h</span>
-          <span class="s1">Work Time</span>
-          <br />
-          <span class="s2">this week</span>
-          <img src="/Training/assets/chart.png" alt="chat" height="200px" width="300px" /> -->
-          <canvas id="myChart1"></canvas>
-        </div>
-        <div class="b3">
-          <h3>Time tracker</h3>
-          <img src="/Training/assets/countdown.png" alt="cnt" height="150px" width="150px" />
-        </div>
-        <div class="b4"></div>
-        <div class="b5">
-          <h4 class="s1">Pension contributions</h4>
-          <hr class="hr1" />
-          <h4 class="s2">Devices</h4>
-          <hr class="hr2" />
-          <img src="/Training/assets/mac.jpg" alt="mac" height="50px" width="50px" />
-          <span class="mac">MacBook Air</span>
-          <br />
-          <span class="version">Version M1</span>
-          <hr class="hr3" />
-          <h4 class="s3">Compensation Summary</h4>
-          <hr class="hr4" />
-          <h4 class="s4">Employee Benefits</h4>
-          <hr class="hr5" />
-        </div>
-        <div class="b6"></div>
-      </div>
-    </div>
-    <script src="chart1.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+</body>
 </html>
