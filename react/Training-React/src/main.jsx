@@ -7,6 +7,7 @@ import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
 import Home from "./Home.jsx";
 import { ToastContainer } from "react-toastify";
+import Profile from "./Profile.jsx";
 const Router = createBrowserRouter([
   {
     path: "/login",
@@ -19,6 +20,10 @@ const Router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 createRoot(document.getElementById("root")).render(

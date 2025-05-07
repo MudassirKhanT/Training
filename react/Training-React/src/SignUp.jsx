@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { setDoc, doc } from "firebase/firestore";
 // import { useNavigate } from "react-router-dom";
 import { auth, dataBase } from "./Firebase";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 function SignUp() {
@@ -33,9 +33,9 @@ function SignUp() {
     try {
       await createUserWithEmailAndPassword(auth, email, pass);
       const user = auth.currentUser;
-      // toast.success("User Registered SuccessFully", {
-      //   position: "bottom-center",
-      // });
+      toast.success("User Registered SuccessFully", {
+        position: "bottom-center",
+      });
       console.log("user registered:", user);
       await setDoc(doc(dataBase, "Users", user.uid), {
         email: email,
@@ -44,9 +44,9 @@ function SignUp() {
       });
     } catch (err) {
       console.log("Errors:", err.message);
-      // toast.error("User Registered Failed", {
-      //   position: "bottom-center",
-      // });
+      toast.error("User Registered Failed", {
+        position: "bottom-center",
+      });
     }
   }
   //   SignUpPassword = pass;

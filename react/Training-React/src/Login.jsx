@@ -1,17 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./Firebase";
 function Login() {
-  const location = useLocation();
-  const state = location.state || {};
-  console.log("State:", state);
-
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
-
-  //   const Password = location.state?.SignUpPassword;
-  //   const { state } = props.state;
-  //   const { pass } = state;
   const [signInPass, setSignInPass] = useState("");
   function handlePassword(event) {
     setSignInPass(event.target.value);
@@ -23,8 +15,16 @@ function Login() {
     // SignUpPassword += event.target.value;
   }
 
-  function handleSubmit() {
-    navigate("/");
+  function handleSubmit(e) {
+    e.preventDefault();
+    auth.onAuthStateChanged(async () => {
+      await signInWithEmailAndPassword(auth, email, signInPass);
+      window.location.href = "/profile";
+      const user = auth.currentUser;
+      if (user) {
+        console.log("User Logged in Successfully");
+      }
+    });
   }
   //   console.log("SignUp Password:", Password);
 
