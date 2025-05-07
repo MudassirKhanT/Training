@@ -1,127 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Quiz App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beginner CS Quiz</title>
     <style>
       body {
-        font-family: sans-serif;
-        background: #f2f2f2;
-        padding: 30px;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #667eea, #764ba2);
         display: flex;
         justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
 
       .box {
         background: white;
         padding: 20px;
-        border-radius: 10px;
-        width: 400px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 400px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
       }
 
-      h2 {
-        margin-bottom: 20px;
-      }
-
-      .q {
+      .question {
+        font-size: 18px;
         margin-bottom: 15px;
       }
 
-      .q label {
+      .options button {
         display: block;
-        margin-bottom: 5px;
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #eee;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background 0.3s;
       }
 
-      button {
-        margin-top: 15px;
-        padding: 10px;
-        background: #007bff;
+      .options button:hover {
+        background: #ddd;
+      }
+
+      .correct {
+        background-color: #00e676 !important;
+        color: white;
+        border: 2px solid #00c853;
+      }
+
+      .wrong {
+        background-color: #ff1744 !important;
+        color: white;
+        border: 2px solid #d50000;
+      }
+
+      #next {
+        margin-top: 10px;
+        padding: 8px 20px;
+        background: #4caf50;
         color: white;
         border: none;
-        border-radius: 6px;
+        border-radius: 4px;
         cursor: pointer;
+        display: none;
       }
 
-      .res {
-        margin-top: 20px;
-        padding: 15px;
-        background: #dfefff;
-        border-radius: 8px;
-        display: none;
-        text-align: center;
+      #score {
+        margin-top: 15px;
+        font-size: 20px;
+        color: #333;
       }
     </style>
   </head>
   <body>
     <div class="box">
-      <h2>JavaScript Quiz 5/5 Marks</h2>
-      <form id="f"></form>
-      <div class="res" id="r">
-        <h3>Done!</h3>
-        <p id="s"></p>
-      </div>
+      <h2>CS Quiz</h2>
+      <div class="question" id="q">Loading...</div>
+      <div class="options" id="opt"></div>
+      <button id="next">Next</button>
+      <div id="score"></div>
     </div>
 
     <script>
-      let a = [
+      let arr = [
         {
-          q: "1 + '1' = ?",
-          o: ["2", "'11'", "NaN", "Error"],
-          a: "'11'",
+          q: "What is a computer?",
+          opts: ["A cooking appliance", "A device that processes data", "A musical instrument", "A car part"],
+          ans: "A device that processes data",
         },
         {
-          q: "Which is not a JS data type?",
-          o: ["String", "Number", "Boolean", "Shape"],
-          a: "Shape",
+          q: "What does RAM stand for?",
+          opts: ["Read Any Memory", "Random Access Memory", "Run All Memory", "Ready Access Mode"],
+          ans: "Random Access Memory",
         },
         {
-          q: "What is used for a single-line comment?",
-          o: ["//", "/*", "<!--", "#"],
-          a: "//",
+          q: "Which of these is an input device?",
+          opts: ["Monitor", "Printer", "Keyboard", "Speaker"],
+          ans: "Keyboard",
         },
         {
-          q: "What does === do?",
-          o: ["Assign", "Compare value", "Compare value and type", "Nothing"],
-          a: "Compare value and type",
+          q: "What is a website?",
+          opts: ["A book", "A page on the internet", "A document", "An offline game"],
+          ans: "A page on the internet",
         },
         {
-          q: "Which is a loop?",
-          o: ["if", "else", "for", "return"],
-          a: "for",
+          q: "What is software?",
+          opts: ["Physical parts of a computer", "Internet cables", "A mobile cover", "Programs that run on a computer"],
+          ans: "Programs that run on a computer",
         },
       ];
 
-      let b = document.getElementById("f");
+      let i = 0;
+      let score = 0;
 
-      a.forEach((x, i) => {
-        let y = document.createElement("div");
-        y.className = "q";
-        let z = `<p>${x.q}</p>`;
-        x.o.forEach((opt) => {
-          z += `<label><input type="radio" name="q${i}" value="${opt}" required> ${opt}</label>`;
+      let qBox = document.getElementById("q");
+      let optBox = document.getElementById("opt");
+      let nextBtn = document.getElementById("next");
+      let scoreBox = document.getElementById("score");
+
+      function showQuestion() {
+        let curr = arr[i];
+        qBox.textContent = curr.q;
+        optBox.innerHTML = "";
+
+        curr.opts.forEach(function (option) {
+          let btn = document.createElement("button");
+          btn.textContent = option;
+          btn.onclick = function () {
+            if (option === curr.ans) {
+              btn.classList.add("correct");
+              score++;
+            } else {
+              btn.classList.add("wrong");
+              let allBtns = optBox.querySelectorAll("button");
+              allBtns.forEach((b) => {
+                if (b.textContent === curr.ans) {
+                  b.classList.add("correct");
+                }
+              });
+            }
+            nextBtn.style.display = "inline-block";
+          };
+          optBox.appendChild(btn);
         });
-        y.innerHTML = z;
-        b.appendChild(y);
-      });
 
-      let btn = document.createElement("button");
-      btn.textContent = "Submit";
-      b.appendChild(btn);
+        nextBtn.style.display = "none";
+      }
 
-      b.addEventListener("submit", function (e) {
-        e.preventDefault();
-        let c = 0;
-        a.forEach((x, i) => {
-          let d = document.querySelector(`input[name="q${i}"]:checked`);
-          if (d && d.value === x.a) {
-            c++;
-          }
-        });
-        let e1 = document.getElementById("r");
-        let e2 = document.getElementById("s");
-        e2.textContent = `You got ${c} out of ${a.length}`;
-        e1.style.display = "block";
-      });
+      nextBtn.onclick = function () {
+        i++;
+        if (i < arr.length) {
+          showQuestion();
+        } else {
+          qBox.textContent = "Quiz Completed!";
+          optBox.innerHTML = "";
+          nextBtn.style.display = "none";
+          scoreBox.textContent = "Your Score: " + score + " / " + arr.length;
+        }
+      };
+
+      showQuestion();
     </script>
   </body>
 </html>

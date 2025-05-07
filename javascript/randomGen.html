@@ -6,8 +6,10 @@
     <title>randomColor</title>
     <style>
       button {
-        margin-left: 680px;
-        margin-top: 20px;
+        /* margin-left: 680px;
+        margin-top: 20px; */
+        position: relative;
+        right: 200px;
         height: 40px;
         width: 150px;
         color: white;
@@ -15,11 +17,42 @@
         border: 1px solid white;
         outline: none;
       }
+      .container {
+        display: flex;
+        margin-top: 150px;
+        margin-left: 80px;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      .main {
+        height: 300px;
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .display {
+        height: 100px;
+        width: 400px;
+        position: relative;
+        bottom: 80px;
+        left: 70px;
+
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <center><h1 style="color: white">Random Color Generator</h1></center>
-    <button id="b" onclick="randomColor()">Change Color</button>
+    <div class="container">
+      <center><h1 style="color: white; position: relative; bottom: 100px; left: 500px">Random Color Generator</h1></center>
+      <div class="main">
+        <div class="display">
+          <h1 id="hex" style="text-align: center; font-size: 2rem"></h1>
+        </div>
+        <button id="b" onclick="randomColor()">Change Color</button>
+      </div>
+    </div>
+
     <script src="random.js"></script>
   </body>
 </html>

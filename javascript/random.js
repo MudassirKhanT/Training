@@ -8,5 +8,7 @@ function randomColor() {
   let color = "#" + blank;
   document.body.style.backgroundColor = color;
   let btn = document.getElementById("b");
+  let head = document.getElementById("hex");
   btn.style.backgroundColor = color;
+  head.innerText = color;
 }
