@@ -108,3 +108,73 @@ form {
     margin-bottom: 20px;
   }
 }
+.choice {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 3rem;
+  margin-top: 50px;
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-left: 15px;
+
+  input {
+    height: 50px;
+    width: 30%;
+    border-radius: 5px;
+    padding-left: 15px;
+    background-color: violet;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  input::placeholder {
+    color: white;
+  }
+  button {
+    border-radius: 5px;
+    height: 50px;
+
+    background-color: violet;
+    color: white;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+  }
+}
+#seven-up,
+#seven,
+#seven-down {
+  height: 200px;
+  width: 200px;
+  color: white;
+  background-color: rgb(58, 2, 58);
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSeven {
+  position: relative;
+  right: 250px;
+  background-color: aliceblue;
+}
+#head {
+  height: 50px;
+  width: 100%;
+  /* margin-top: 250px; */
+  margin-top: 20px;
+  background-color: rgb(58, 2, 58);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+.images {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 15px;
+}

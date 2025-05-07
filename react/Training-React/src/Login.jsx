@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./Firebase";
+import { toast } from "react-toastify";
 function Login() {
   const [email, setEmail] = useState("");
   const [signInPass, setSignInPass] = useState("");
@@ -22,7 +23,14 @@ function Login() {
       window.location.href = "/profile";
       const user = auth.currentUser;
       if (user) {
-        console.log("User Logged in Successfully");
+        console.log("");
+        toast.success("User Logged in Successfully", {
+          position: "bottom-center",
+        });
+      } else {
+        toast.error("User Logged in Failed", {
+          position: "bottom-center",
+        });
       }
     });
   }
