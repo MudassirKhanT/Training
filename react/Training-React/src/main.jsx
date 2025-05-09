@@ -9,6 +9,11 @@ import Home from "./Home.jsx";
 import { ToastContainer } from "react-toastify";
 import Profile from "./Profile.jsx";
 import Seven from "./Seven.jsx";
+import Snake from "./Snake/Snake.jsx";
+import User from "./User.jsx";
+import CreateUser from "./CreateUser.jsx";
+import UpdateUser from "./UpdateUser.jsx";
+import TodoList from "./TodoList.jsx";
 // import { auth } from "./Firebase.jsx";
 
 // const [user, setUser] = useState(null);
@@ -38,6 +43,26 @@ const Router = createBrowserRouter([
   {
     path: "/seven",
     element: <Seven />,
+  },
+  {
+    path: "/snake",
+    element: <Snake />,
+  },
+  {
+    path: "/users",
+    element: <User />,
+  },
+  {
+    path: "/create",
+    element: <CreateUser />,
+  },
+  {
+    path: "/update",
+    element: <UpdateUser />,
+  },
+  {
+    path: "/todo",
+    element: <TodoList />,
   },
 ]);
 createRoot(document.getElementById("root")).render(

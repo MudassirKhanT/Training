@@ -29,11 +29,13 @@ body {
   text-align: center;
 } */
 body {
-  background-color: rgb(226, 246, 197);
-  margin-left: 500px;
-  margin-top: 100px;
+  background: linear-gradient(120deg, lightblue, lightpink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
 }
-.loginContainer {
+/* .loginContainer {
   background-color: white;
   height: 250px;
   width: 400px;
@@ -99,8 +101,8 @@ form {
     bottom: 50px;
     color: red;
   }
-}
-.fName,
+} */
+/* .fName,
 .lName {
   input {
     height: 30px;
@@ -151,7 +153,7 @@ form {
   height: 200px;
   width: 200px;
   color: white;
-  background-color: rgb(58, 2, 58);
+  background-color: rgb(240, 245, 100);
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -164,10 +166,10 @@ form {
 }
 #head {
   height: 50px;
-  width: 100%;
-  /* margin-top: 250px; */
-  margin-top: 20px;
-  background-color: rgb(58, 2, 58);
+  width: 100%; */
+/* margin-top: 250px; */
+/* margin-top: 20px;
+  background-color: rgb(44, 248, 58);
   color: white;
   font-size: 2rem;
   text-align: center;
@@ -177,4 +179,78 @@ form {
   justify-content: center;
   margin-top: 10px;
   gap: 15px;
+} */
+
+/* .createForm {
+  height: 250px;
+  width: 300px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    height: 30px;
+    width: 200px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+  }
+  button {
+    height: 30px;
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+.create,
+.update {
+  position: relative;
+  bottom: 50px;
+} */
+/* .tContainer {
+  height: 200px;
+  width: 100px;
+  background-color: white;
+}
+.todoForm {
+  height: 80px;
+  width: 100px;
+  background-color: antiquewhite;
+} */
+.TodoContainer {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  width: 250px;
+  margin-top: 10px;
+  button {
+    height: 20px;
+    margin-top: 15px;
+  }
+}
+
+.todoForm {
+  input {
+    height: 30px;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgb(179, 228, 247);
+    color: rgb(55, 54, 54);
+    font-size: 1rem;
+  }
+  button {
+    height: 30px;
+    width: 80px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: lightpink;
+    color: white;
+  }
+  input:placeholder {
+    color: white;
+  }
+}
+h1 {
+  color: white;
 }

@@ -6,8 +6,15 @@ import img5 from "./assets/die5.jpg";
 import img6 from "./assets/die6.jpg";
 import win from "./assets/win.mp3";
 import lost from "./assets/snake.mp3";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { auth, dataBase } from "./Firebase";
+import { useState } from "react";
+// import { useState } from "react";
 
 function Seven() {
+  const [finalbal, setFinalBal] = useState(0);
+  // const [balance, setBalance] = useState(0);
+
   let choice = "";
   function sevenUp() {
     choice = "7up";
@@ -27,15 +34,8 @@ function Seven() {
     document.getElementById("seven-down").style.display = "block";
     document.getElementById("seven-up").style.display = "none";
   }
-  //   function win() {
-  //     let audio = new Audio("./assets/win.mp3");
-  //     audio.play();
-  //   }
-  //   function lost() {
-  //     let audio = new Audio("./assets/win.mp3");
-  //     audio.play();
-  //   }
-  function roll() {
+
+  async function roll(e) {
     const audio = document.getElementById("sound");
     const loser = document.getElementById("hodgaya");
     let l = [1, 2, 3, 4, 5, 6];
@@ -54,6 +54,7 @@ function Seven() {
     if (d1 + d2 == 7 && choice == "7") {
       audio.play();
       document.getElementById("head").innerHTML = `You Won Exact 7 Balance is:${(balance += inputVal * 3)}`;
+
       document.getElementById("seven-up").style.display = "block";
       document.getElementById("seven-down").style.display = "block";
     } else if (d1 + d2 < 7 && choice == "7down") {
@@ -73,7 +74,31 @@ function Seven() {
       document.getElementById("seven").style.display = "block";
       document.getElementById("seven-down").style.display = "block";
     }
+    e.preventDefault();
+
+    try {
+      const user = auth.currentUser;
+      await setDoc(doc(dataBase, "Scores", user.uid), {
+        balance: balance,
+      });
+      const balRef = doc(dataBase, "Scores", user.uid);
+      console.log(balRef, "balRef");
+
+      const balSnap = await getDoc(balRef);
+      console.log(balSnap, "balSnap");
+
+      if (balSnap.exists()) {
+        console.log("Exist");
+        setFinalBal(balSnap.data());
+      } else {
+        console.log("Not Exists");
+        setFinalBal(0);
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   }
+  console.log("FinalBal:", finalbal);
 
   return (
     <>
